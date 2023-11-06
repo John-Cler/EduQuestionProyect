@@ -1,49 +1,55 @@
-# Historia: Publicacion de Item.
+# Historia: Publicacion de Ingreso.
 
-- Yo como: Usuario estudiante
-- Quiero: Poder registrar una lista de materias de mi grado con mis notas semestrales.
-. Para: Poder recibir una ayuda.
+- Yo como: Usuario Estudiante
+- Quiero: Acceso a la página de listado de notas de estudio.
+. Para: poder ver una lista de mis propias notas de estudio, con el plan de estudio.
+
+Yo, como Usuario Estudiante,
+Quiero: poder ver la fecha de creación de cada nota de estudio en la lista,
+Para: tener una referencia de cuándo se crearon las notas.
+
+## Pendientes de definición.
+
+1. ¿Cómo se organizarán y mostrarán las notas de estudio en la plataforma?
+R: Se mostraran deacuerdo al grado de dificultad (se mostrara la nota mas baja para crear un plan de estudio)
 
 
 ## Especificación de requerimientos.
 
-1. La cantidad maxima o minima de materias.
-2. Al momento de registrar las materias se debe informar al usuario.
-3. Las materias se deben registrar juntamente con su nota.
-4. Se deben enviar las notas a proceso de validacion.
-
+1. Los usuarios registrados en EduQuestion deben tener acceso a una sección o página donde puedan listar y ver sus propias notas de estudio.
+2. Las notas de estudio deben estar organizadas de forma clara y ordenada, posiblemente con un título y una breve descripción para cada nota.
+3. Los usuarios deben poder hacer clic en una nota de estudio para ver su contenido completo.
 ## Analisis
 
-### Pantalla de lista de materias
+### Página de Listado de Notas de Estudio
+La página de listado de notas de estudio en EduQuestion funcionará de la siguiente manera:
 
-A continuación se presenta la pantalla de subida, cuyo funcionamiento es.
+1. Los usuarios registrados podrán acceder a esta página desde su panel de control o menú principal.
+2. Las notas de estudio se mostrarán en una lista, posiblemente en forma de tarjetas, con información básica como el título y la fecha de creación.
+3. Al hacer clic en una nota de estudio, se mostrará su contenido completo, lo que permitirá a los usuarios estudiarla.
 
-1. El usuario hizo clic en el boton de añadir.
-2. El usuario deberá tener lista las notas
+![Alt text](WebsiteSample.png)
 
-![Alt text](gradoyNota.png)
+### Pantalla de subida de imagen
 
-### Pantalla de subida de notas
+## CCriterios de aceptación (Gherkin)
 
-
-### Validacion de cantidad de imagenes
-
-- Dado: Que el usuario registro el grado
-- Cuando: Este por guardar la materias con notas
-- Entonces: El sistema debe validar que subio al menos 2 y máximo 13.
+### Listado de Notas de Estudio
+- Dado: Un usuario registrado en EduQuestion.
+- Cuando: Accede a la página de listado de notas de estudio.
+- Entonces: Debe poder ver una lista de sus propias notas de estudio, con opciones para filtrar, ordenar y buscar.
+### Código de Visualización de una Nota de Estudio
 
 ## Disenio
 
-Deberia mostrar un mensaje de se guardo con exito las materias.
-### Pantalla de registro de notas
+### Pantalla de listar notas de estudio
 
-1. Para buscar el coddigo de la carta:
+1. Para buscar la nota mas baja y realizar un plan de estudio:
 
 Request:
 ```
-POST BASE_URL/api/estudiante/notas_grados
+GET BASE_URL/api/estudiante/notas_grados/temario/id
 Accept: Application/json
-Authorization: Bearer JWT
 ```
 
 Response: Exitoso statusCode: 200
