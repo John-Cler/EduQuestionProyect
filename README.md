@@ -2,7 +2,7 @@
 # Análisis y Diseño de Software
 
 ## Valor
-Los usuarios pueden registrar sus materias y buscar la/as calificación más baja para obtener un plan de estudio efectivo.
+"Registrar materias y buscar la(s) calificación(es) más baja(s) para obtener un plan de estudio efectivo."
 
 ## Historias de usuario
 
