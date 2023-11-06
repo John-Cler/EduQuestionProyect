@@ -1,7 +1,7 @@
 # Historia: Publicacion de Item.
 
 - Yo como: Usuario estudiante
-- Quiero: Registrar mis materias y establecer las notas. 
+- Quiero: Registrar el grado de estudio y mis materias con las notas. 
 . Para: Poder tener una guia de estudios.
 
 ## Pendientes de definición.
@@ -29,11 +29,11 @@ A continuación se presenta la pantalla registro de grado y notas, cuyo funciona
 
 ![Alt text](gradoyNotas.png)
 
-### Pantalla de subida de imagen
+### Pantalla de grado y notas
 
 
 ### Validacion de grado y notas
-- Dado: Que el usuario inicio sesión y desea crear una guia de esteduio.
+- Dado: Que el usuario inicio sesión y desea crear una guia de estudio.
 - Cuando: Este por hacer click en ayudame.
 - Entonces: El sistema debe validar que subio al menos 4 materias con sus notas.
 
