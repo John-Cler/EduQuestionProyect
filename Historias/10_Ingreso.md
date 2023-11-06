@@ -41,7 +41,7 @@ A continuación se presenta la pantalla de registro de nuevos usuarios, cuyo fun
 2. Luego, deben completar el formulario con la información requerida, incluyendo nombre completo, dirección de correo electrónico y contraseña.
 3. El sistema debe guiar a los usuarios para corregir cualquier información incorrecta o faltante.
 
-![Alt text](Pagina de inicio.png)
+![Alt text](Paginadenicio.png) ![Alt text](registro.png)
 
 ### Pantalla de subida de imagen
 
