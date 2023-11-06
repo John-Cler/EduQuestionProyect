@@ -10,10 +10,11 @@
 
 A continuación se presenta la pantalla de registro, cuyo tendra dos funcionamientos los cuales son:
 
-1. El usuario hizo clic previamente en registrar con google.
-2. El usuario deberá tener lista las images...
+1. El usuario hizo clic previamente en registrar en el ingreso.
+2. Cuando un usuario hace clic en "Registrarse con Google", se abrirá una ventana emergente que solicitará que inicien sesión en su cuenta de Google si aún no lo han hecho..
+3. 
 
-![Alt text](image.png)
+![Alt text](registro.png)
 
 ### Pantalla de subida de imagen
 
