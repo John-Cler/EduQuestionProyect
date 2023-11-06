@@ -28,7 +28,7 @@ La página de listado de notas de estudio en EduQuestion funcionará de la sigui
 2. Las notas de estudio se mostrarán en una lista, posiblemente en forma de tarjetas, con información básica como el título y la fecha de creación.
 3. Al hacer clic en una nota de estudio, se mostrará su contenido completo, lo que permitirá a los usuarios estudiarla.
 
-![Alt text](WebsiteSample.png)
+![Alt text](Listadetareas.png)
 
 ### Pantalla de subida de imagen
 
