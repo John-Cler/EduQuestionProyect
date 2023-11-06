@@ -27,7 +27,7 @@ A continuación se presenta la pantalla registro de grado y notas, cuyo funciona
 3. El usuario deberia tener que seleccionar el grado que se encuentre.
 4. El usuario podra añadir las materias con la calificación
 
-![Alt text](Pagina de inicio.png)
+![Alt text](gradoyNotas.png)
 
 ### Pantalla de subida de imagen
 
@@ -37,7 +37,7 @@ A continuación se presenta la pantalla registro de grado y notas, cuyo funciona
 - Cuando: Este por hacer click en ayudame.
 - Entonces: El sistema debe validar que subio al menos 4 materias con sus notas.
 
-### Código de tarjeta no encontrado
+
 
 ## Disenio
 
