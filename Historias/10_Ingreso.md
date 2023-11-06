@@ -17,58 +17,54 @@
 . Para: Poder Ingresar mis datos al sistema.
 
 - Yo como: Usuario Estudiante
-- Quiero: quiero ver un botón o enlace de "Registro" en la página de inicio de EduQuestion.
-. Para: Poder Ingresar al sistema.
+- Quiero: que la plataforma me proporcione un mensaje de bienvenida después de un registro exitoso.
+. Para: Poder confirmar mi registros en el sistema.
 
 ## Pendientes de definición.
 
-1. ¿El numero de imagenes no deber ser ilimatado?
-R. Juan Perez indica que en su experiencia 4 son suficientes
+1. ¿Cuáles son los requisitos para la contraseña, como longitud y complejidad?
+R: Los requisitos de la contraseña deben incluir una longitud mínima de 8 caracteres y deben contener al menos una letra mayúscula, una letra minúscula y un número.
 
 
 ## Especificación de requerimientos.
 
-1. La cantidad maxima de fotos es de 4.
-2. Al momento de subir la imagen, se debe indicar al vendedor, que la resolución debe ser de 30 ppi. El tamanio maximo de una imagen 1024 x 2567, aspect ratio de 16:9. Archivos JPG.
-3. Las imagenes deben subirse de acuerdo al punto 2. Una vez que los reciba el servidor se debe procesar la imagen para verificar si cumple las condigiones y se debe generar una imagen mas pequenia de menos de 200KB y un tamanio de 256 x 438.
-4. Se deben enviar las imagenes a proceso de verificacion de contenido apropiado.
+1. La contraseña debe cumplir con los requisitos, incluyendo una longitud mínima de 8 
+2. Si se proporciona información incorrecta o se omite algún campo, el sistema debe mostrar mensajes de error informativos para guiar al usuario en la corrección de los errores.
 
 ## Analisis
 
-### Pantalla de creacion de nueva subasta
+### Pantalla de Registro en EduQuestion
 
-A continuación se presenta la pantalla de subida, cuyo funcionamiento es.
+A continuación se presenta la pantalla de registro de nuevos usuarios, cuyo funcionamiento es:
 
-1. El usuario hizo clic previamente en Crear Nueva Subasta.
-2. El usuario deberá tener lista las images...
+1. Los usuarios que deseen registrarse deben hacer clic en "Registro" en la página de inicio.
+2. Luego, deben completar el formulario con la información requerida, incluyendo nombre completo, dirección de correo electrónico y contraseña.
+3. El sistema debe guiar a los usuarios para corregir cualquier información incorrecta o faltante.
 
-![Alt text](image.png)
+![Alt text](Pagina de inicio.png)
 
 ### Pantalla de subida de imagen
 
-## Criterios de aceptacion
+## Criterios de aceptación (Gherkin)
 
-Gherkin
+### Validación de campos de registro
+- Dado: Que el usuario desea registrarse en EduQuestion.
+- Cuando: Completa el formulario de registro con información válida.
+- Entonces: El sistema debe enviar un correo de verificación y redirigir al usuario a la página de inicio.
 
-### Validacion de cantidad de imagenes
-
-- Dado: Que el usuario inico sesión y desea crear una nueva subasta.
-- Cuando: Este por guardar la subasta
-- Entonces: El sistema debe validar que subio al menos 2 y máximo 4.
-
-### Código de tarjeta no encontrado
+### Código de registro de usuario
 
 ## Disenio
 
-### Pantalla de creacion de nueva subasta
+### Pantalla de creacion de nueva usuario
 
-1. Para buscar el coddigo de la carta:
+1. Para buscar usuario registrado:
 
 Request:
 ```
-GET BASE_URL/api/v1/cardInfo/{cardCode}
+GET BASE_URL/api/v1/login/id
 Accept: Application/json
-Authorization: Bearer JWT
+Authorization: Bearer OAuth 2.0
 ```
 
 Response: Exitoso statusCode: 200
