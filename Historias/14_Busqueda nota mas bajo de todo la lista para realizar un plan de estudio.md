@@ -1,4 +1,4 @@
-# Historia: Publicacion de Item.
+# Historia: Busqueda nota mas bajo de todo la lista para realizar un plan de estudio..
 
 - Yo como: Usuario estudiante
 - Quiero: Poder observar en que materia estoy mal

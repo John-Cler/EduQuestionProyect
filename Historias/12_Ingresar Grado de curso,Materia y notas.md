@@ -1,4 +1,4 @@
-# Historia: Publicacion de Item.
+# Historia: Ingresar Grado de curso,Materia y notas.
 
 - Yo como: Usuario estudiante
 - Quiero: Registrar el grado de estudio y mis materias con las notas. 

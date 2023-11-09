@@ -1,4 +1,4 @@
-# Historia: Publicacion de Ingreso.
+# Historia: Listar. notas de estudio.
 
 - Yo como: Usuario Estudiante
 - Quiero: Acceso a la página de listado de notas de estudio.

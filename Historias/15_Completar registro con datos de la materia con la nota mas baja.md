@@ -1,7 +1,7 @@
-# Historia: Publicacion de Item.
+# Historia: omplertar registro con datos de la materia con la nota mas baja.
 
-- Yo como: Usuario vendedor
-- Quiero: Poder registrar un Item subiendo fotos y estableciendo precio. Ademas de la modalidad precio fijo o subasta. . Ademas de disponibilidad Geográfica.
+- Yo como: Usuario estudiante
+- Quiero: Poder registrar las tareas
 . Para: Poder vender mis tarjetas.
 
 ## Pendientes de definición.
