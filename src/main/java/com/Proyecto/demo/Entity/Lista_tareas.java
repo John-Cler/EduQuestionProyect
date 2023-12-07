@@ -1,2 +1,4 @@
-package com.Proyecto.demo.Entity;public class Lista_tareas {
+package com.Proyecto.demo.Entity;
+
+public class Lista_tareas {
 }
