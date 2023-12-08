@@ -1,8 +1,5 @@
 package com.Proyecto.demo.Entity;
 
-<<<<<<< HEAD
-public class Materia {
-=======
 import jakarta.persistence.*;
 
 @Entity
@@ -54,5 +51,4 @@ public class Materia {
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }
->>>>>>> 0ba236b0f411697e69f71c8ccfc15ed21bb209ed
 }
