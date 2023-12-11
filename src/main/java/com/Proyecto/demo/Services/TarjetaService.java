@@ -34,6 +34,6 @@ public class TarjetaService {
 
     public void eliminarTarjeta(Long id) {
         // Lógica para eliminar una tarjeta por su ID
-        
+
     }
 }
