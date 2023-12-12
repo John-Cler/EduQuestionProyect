@@ -1,6 +1,6 @@
 package com.Proyecto.demo.Services;
 
-import com.Proyecto.demo.Dto.ItinerarioDTO;
+import com.Proyecto.demo.Dto.ItinerarioDto;
 import com.Proyecto.demo.Entity.Intinerario;
 import com.Proyecto.demo.Repository.ItinerarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class ItinerarioService {
         this.itinerarioRepository = itinerarioRepository;
     }
 
-    public ItinerarioDTO generarItinerario(ItinerarioDTO itinerarioDTO) {
+    public ItinerarioDto generarItinerario(ItinerarioDto itinerarioDTO) {
         // Aquí puedes implementar la lógica para generar el itinerario, por ejemplo, llamando a OpenAI
         // Puedes usar un mapeador (Mapper) para convertir entre Itinerario y ItinerarioDTO
         // Guardar en la base de datos, etc.
@@ -30,8 +30,8 @@ public class ItinerarioService {
         return convertirAItinerarioDTO(itinerario);
     }
 
-    private ItinerarioDTO convertirAItinerarioDTO(Intinerario itinerario) {
-        ItinerarioDTO itinerarioDTO = new ItinerarioDTO();
+    private ItinerarioDto convertirAItinerarioDTO(Intinerario itinerario) {
+        ItinerarioDto itinerarioDTO = new ItinerarioDto();
         itinerarioDTO.setTopic(itinerario.getTopic());
         itinerarioDTO.setPlan(itinerario.getPlan());
         return itinerarioDTO;
