@@ -1,7 +1,7 @@
 package com.Proyecto.demo.Services;
 
 import com.Proyecto.demo.Dto.ItinerarioDto;
-import com.Proyecto.demo.Entity.Intinerario;
+import com.Proyecto.demo.Entity.Itinerario;
 import com.Proyecto.demo.Repository.ItinerarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class ItinerarioService {
         // Guardar en la base de datos, etc.
 
         // Ejemplo de conversión (puedes usar una biblioteca como ModelMapper)
-        Intinerario itinerario = new Intinerario();
+        Itinerario itinerario = new Itinerario();
         itinerario.setTopic(itinerarioDTO.getTopic());
         itinerario.setPlan(generarPlan(itinerarioDTO.getTopic())); // Método ficticio para generar el plan
 
@@ -30,7 +30,7 @@ public class ItinerarioService {
         return convertirAItinerarioDTO(itinerario);
     }
 
-    private ItinerarioDto convertirAItinerarioDTO(Intinerario itinerario) {
+    private ItinerarioDto convertirAItinerarioDTO(Itinerario itinerario) {
         ItinerarioDto itinerarioDTO = new ItinerarioDto();
         itinerarioDTO.setTopic(itinerario.getTopic());
         itinerarioDTO.setPlan(itinerario.getPlan());

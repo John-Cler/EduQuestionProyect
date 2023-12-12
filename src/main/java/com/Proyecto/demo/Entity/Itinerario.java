@@ -6,17 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Intinerario {
+public class Itinerario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String topic;
     private String plan;
 
-    public Intinerario() {
+    public Itinerario() {
     }
 
-    public Intinerario(Long id, String topic, String plan) {
+    public Itinerario(Long id, String topic, String plan) {
         this.id = id;
         this.topic = topic;
         this.plan = plan;
