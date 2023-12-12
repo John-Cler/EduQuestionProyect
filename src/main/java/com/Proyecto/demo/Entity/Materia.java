@@ -1,54 +1,70 @@
 package com.Proyecto.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "materia")
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idmateria;
-    private String tipo_materia;
-    private String descripcion;
+    private int id;
 
-    public Materia() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    @JsonIgnore
+    private Usuario usuario;
 
-    public Materia(Integer idmateria, String tipo_materia, String descripcion) {
-        this.idmateria = idmateria;
-        this.tipo_materia = tipo_materia;
-        this.descripcion = descripcion;
-    }
+    private String grado;
+    private String nivel;
 
-    public Integer getIdmateria() {
-        return idmateria;
-    }
+    @OneToMany(mappedBy = "usuario_grado")
+    private List<Materia> materias;
 
-    public void setIdmateria(Integer idmateria) {
-        this.idmateria = idmateria;
-    }
+    @OneToMany(mappedBy = "usuario_grado")
+    @JsonIgnore
+    private List<Itinerario> itinerarios;
 
-    public String getTipo_materia() {
-        return tipo_materia;
+    public int getId() {
+        return id;
     }
 
-    public void setTipo_materia(String tipo_materia) {
-        this.tipo_materia = tipo_materia;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-    @Override
-    public String toString() {
-        return "Materia{" +
-                "idmateria=" + idmateria +
-                ", tipo_materia='" + tipo_materia + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
+
+    public String getGrado() {
+        return grado;
     }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
+    }
+
 }

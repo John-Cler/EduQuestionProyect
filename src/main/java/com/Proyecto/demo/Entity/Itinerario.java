@@ -1,59 +1,63 @@
 package com.Proyecto.demo.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
 public class Itinerario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String topic;
-    private String plan;
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "materia_id")
+    @JsonIgnore
+    private Materia materia;
+    @ManyToOne
+    @JoinColumn(name = "usuario_grado_id")
+    @JsonIgnore
+    private GradoUsuario usuario_grado;
+    private String tema;
+    @Column(columnDefinition = "text")
+    private String res_itinerario;
 
-    public Itinerario() {
-    }
-
-    public Itinerario(Long id, String topic, String plan) {
-        this.id = id;
-        this.topic = topic;
-        this.plan = plan;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getTopic() {
-        return topic;
+    public Materia getMateria() {
+        return materia;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
-    public String getPlan() {
-        return plan;
+    public GradoUsuario getUsuario_grado() {
+        return usuario_grado;
     }
 
-    public void setPlan(String plan) {
-        this.plan = plan;
+    public void setUsuario_grado(GradoUsuario usuario_grado) {
+        this.usuario_grado = usuario_grado;
     }
 
-    @Override
-    public String toString() {
-        return "Itinerario{" +
-                "id=" + id +
-                ", topic='" + topic + '\'' +
-                ", plan='" + plan + '\'' +
-                '}';
+    public String getTema() {
+        return tema;
     }
 
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public String getRes_itinerario() {
+        return res_itinerario;
+    }
+
+    public void setRes_itinerario(String res_itinerario) {
+        this.res_itinerario = res_itinerario;
+    }
 }
 
