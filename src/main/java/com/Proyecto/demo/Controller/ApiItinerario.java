@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/itinerarios")
-public class ItinerarioController {
+public class ApiItinerario {
 //    private final ItinerarioService itinerarioService;
 //
 //    @Autowired

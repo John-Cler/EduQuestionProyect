@@ -1,7 +1,5 @@
 package com.Proyecto.demo.Controller;
 
-import com.Proyecto.demo.Dto.TarjetaDTO;
-import com.Proyecto.demo.Services.TarjetaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +8,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tarjetas")
 
-public class TarjetaController {
+public class ApiUsuario {
 
     @Autowired
     private TarjetaService tarjetaService;
