@@ -1,46 +1,51 @@
 package com.Proyecto.demo.Controller;
 
+import com.Proyecto.demo.Entity.Usuario;
+import com.Proyecto.demo.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
-
 @RestController
-@RequestMapping("/tarjetas")
+@CrossOrigin(origins = "http://localhost:4200/")
+@RequestMapping("/api/v1/usuarios")
 
 public class ApiUsuario {
 
     @Autowired
-    private TarjetaService tarjetaService;
-
-    @PostMapping
-    public TarjetaDTO crearTarjeta(@RequestBody TarjetaDTO tarjetaDTO) {
-        // Lógica para crear una nueva tarjeta y devolver su representación TDO
-        return tarjetaService.crearTarjeta(tarjetaDTO);
-    }
+    private UsuarioService usuarioService;
 
     @GetMapping
-    public List<TarjetaDTO> listarTarjetas() {
-        // Lógica para listar todas las tarjetas y devolver sus representaciones TDO
-        return tarjetaService.listarTarjetas();
+    public ResponseEntity<List<Usuario>> getUsuarios() {
+        return ResponseEntity.ok(usuarioService.findAll());
     }
 
-    @GetMapping("/{id}")
-    public TarjetaDTO obtenerTarjeta(@PathVariable Long id) {
-        // Lógica para obtener una tarjeta por su ID y devolver su representación TDO
-        return tarjetaService.obtenerTarjeta(id);
+    @GetMapping("{id}")
+    public ResponseEntity<Usuario> getUsuario(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(usuarioService.getById(id));
     }
 
-    @PutMapping("/{id}")
-    public TarjetaDTO actualizarTarjeta(@PathVariable Long id, @RequestBody TarjetaDTO tarjetaDTO) {
-        // Lógica para actualizar una tarjeta y devolver su representación TDO
-        return tarjetaService.actualizarTarjeta(id, tarjetaDTO);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminarTarjeta(@PathVariable Long id) {
-        // Lógica para eliminar una tarjeta por su ID
-        tarjetaService.eliminarTarjeta(id);
+    @PostMapping
+    public ResponseEntity<Usuario> saveUsuario(@RequestBody Usuario usuario) {
+        try {
+            Usuario nuevo_usuario = new Usuario();
+            //existe usuario
+            boolean existe_usuario = usuarioService.ExisteUsuarioCorreo(usuario.getEmail());
+            if(existe_usuario){
+                nuevo_usuario = usuarioService.buscarPorCorreo(usuario.getEmail());
+                return ResponseEntity.created(new URI("/api/v1/usuarios/" + nuevo_usuario.getId())).body(nuevo_usuario);
+            }else{
+                nuevo_usuario.setNombre(usuario.getNombre());
+                nuevo_usuario.setEmail(usuario.getEmail());
+                Usuario usuario_creado = usuarioService.save(nuevo_usuario);
+                return ResponseEntity.created(new URI("/api/v1/usuarios/" + usuario_creado.getId())).body(usuario_creado);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
     }
 
 }
