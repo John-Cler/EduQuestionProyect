@@ -9,17 +9,6 @@ public class GradoDto {
     private String nivel;
     private List<MateriaDto> materias;
 
-    public GradoDto() {
-    }
-
-    public GradoDto(Long id, Long usuario_id, String grado, String nivel, List<MateriaDto> materias) {
-        this.id = id;
-        this.usuario_id = usuario_id;
-        this.grado = grado;
-        this.nivel = nivel;
-        this.materias = materias;
-    }
-
     public Long getId() {
         return id;
     }

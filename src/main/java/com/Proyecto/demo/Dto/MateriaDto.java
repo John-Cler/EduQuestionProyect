@@ -10,13 +10,6 @@ public class MateriaDto {
     public MateriaDto() {
     }
 
-    public MateriaDto(int id, String nombre, String nota, String estado) {
-        this.id = id;
-        this.nombre = nombre;
-        this.nota = nota;
-        this.estado = estado;
-    }
-
     public int getId() {
         return id;
     }

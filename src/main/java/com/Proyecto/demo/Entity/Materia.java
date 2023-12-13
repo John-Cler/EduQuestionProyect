@@ -11,20 +11,14 @@ public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_grado_id")
     @JsonIgnore
-    private Usuario usuario;
-
-    private String grado;
-    private String nivel;
-
-    @OneToMany(mappedBy = "usuario_grado")
-    private List<Materia> materias;
-
-    @OneToMany(mappedBy = "usuario_grado")
-    @JsonIgnore
+    private GradoUsuario usuario_grado;
+    private String nombre;
+    private Float nota;
+    private String estado;
+    @OneToMany(mappedBy = "materia")
     private List<Itinerario> itinerarios;
 
     public int getId() {
@@ -35,36 +29,43 @@ public class Materia {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public GradoUsuario getUsuario_grado() {
+        return usuario_grado;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario_grado(GradoUsuario usuario_grado) {
+        this.usuario_grado = usuario_grado;
     }
 
-    public String getGrado() {
-        return grado;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setGrado(String grado) {
-        this.grado = grado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getNivel() {
-        return nivel;
+    public Float getNota() {
+        return nota;
     }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
+    public void setNota(Float nota) {
+        this.nota = nota;
     }
 
-    public List<Materia> getMaterias() {
-        return materias;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setMaterias(List<Materia> materias) {
-        this.materias = materias;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
+    public List<Itinerario> getItinerarios() {
+        return itinerarios;
+    }
+
+    public void setItinerarios(List<Itinerario> itinerarios) {
+        this.itinerarios = itinerarios;
+    }
 }
